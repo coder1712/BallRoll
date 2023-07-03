@@ -9,6 +9,7 @@ TagManager:
   - EnemyBody
   - SceneTransition
   - GoldBar
+  - EnemyFire
   layers:
   - Default
   - TransparentFX
