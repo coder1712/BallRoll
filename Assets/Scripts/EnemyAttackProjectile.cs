@@ -17,23 +17,10 @@ public class EnemyAttackProjectile : MonoBehaviour
         transform.Translate(GetComponentInParent<Transform>().forward * speed * Time.deltaTime);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
-
-            // Debug.Log("Projectile hit the player!");
-
-            // // Get the intersection point of the projectile and the player's raycast
-            // RaycastHit hit;
-            // if (Physics.Raycast(transform.position, transform.forward, out hit))
-            // {
-            //     // Get the intersection point
-            //     Vector3 intersectionPoint = hit.point;
-            //     Debug.Log("Intersection point: " + intersectionPoint);
-            // }
-
-            // // Destroy the projectile
             Destroy(gameObject);
         }
     }

@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private float movementX;
     private float movementY;
 
+    public Health health;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
 
@@ -103,9 +104,10 @@ public class PlayerController : MonoBehaviour
             count += 5;
             SetCountText();
         }
-        if (collision.gameObject.CompareTag("EnemyBody"))
+        if (collision.gameObject.CompareTag("EnemyBody") || collision.gameObject.CompareTag("EnemyFire"))
         {
             //Player Damage
+            health.health -= 1;
             count = 0;
             SetCountText();
         }
@@ -113,12 +115,12 @@ public class PlayerController : MonoBehaviour
     // Track Score
     void SetCountText()
     {
-        countText.text = "Count: " + count.ToString();
+        countText.text = " " + count.ToString();
 
-        if (count >= 12)
-        {
-            winTextObject.SetActive(true);
-        }
+        // if (count >= 12)
+        // {
+        //     winTextObject.SetActive(true);
+        // }
     }
 
 }

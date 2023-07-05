@@ -44,6 +44,7 @@
      <Compile Include="Assets\Scripts\SceneTransition.cs" />
      <Compile Include="Assets\Scripts\ResumeScene.cs" />
      <Compile Include="Assets\Scripts\StartMenuController.cs" />
+     <Compile Include="Assets\Scripts\Health.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
@@ -772,6 +773,9 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.State">
         <HintPath>D:\anshul\github\BallRoll\Library\ScriptAssemblies\Unity.VisualScripting.State.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+        <HintPath>D:\anshul\github\BallRoll\Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
