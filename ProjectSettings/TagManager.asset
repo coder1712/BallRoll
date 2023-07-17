@@ -10,6 +10,7 @@ TagManager:
   - SceneTransition
   - GoldBar
   - EnemyFire
+  - key
   layers:
   - Default
   - TransparentFX

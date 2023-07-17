@@ -25,7 +25,8 @@ public class PlayerController : MonoBehaviour
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
 
-    private int count;
+    private int score;
+    public int key;
 
     void Start()
     {
@@ -34,7 +35,8 @@ public class PlayerController : MonoBehaviour
         sphereCollider = GetComponent<SphereCollider>();
         jumpAction = playerInput.actions["Jump"];
 
-        count = 0;
+        score = 0;
+        key = 0;
         SetCountText();
         winTextObject.SetActive(false);
         cameraTransform = Camera.main.transform;
@@ -91,33 +93,31 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("GoldBar"))
         {
             other.gameObject.SetActive(false);
-            count = count + 1;
+            score = score + 1;
             SetCountText();
+        }
+        if (other.gameObject.CompareTag("key"))
+        {
+            key++;
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("EnemyHead"))
-        {
-            // Enemy Damage
-            count += 5;
-            SetCountText();
-        }
         if (collision.gameObject.CompareTag("EnemyBody") || collision.gameObject.CompareTag("EnemyFire"))
         {
             //Player Damage
             health.health -= 1;
-            count = 0;
+            score = 0;
             SetCountText();
         }
     }
     // Track Score
     void SetCountText()
     {
-        countText.text = " " + count.ToString();
+        countText.text = " " + score.ToString();
 
-        // if (count >= 12)
+        // if (score >= 12)
         // {
         //     winTextObject.SetActive(true);
         // }
