@@ -98,6 +98,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.CompareTag("key"))
         {
+            other.gameObject.SetActive(false);
             key++;
         }
     }
@@ -116,11 +117,6 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = " " + score.ToString();
-
-        // if (score >= 12)
-        // {
-        //     winTextObject.SetActive(true);
-        // }
     }
 
 }

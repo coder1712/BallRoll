@@ -2767,7 +2767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 658200443}
   m_LocalRotation: {x: 0.32326594, y: 0, z: 0, w: 0.94630814}
-  m_LocalPosition: {x: -111.29245, y: 5.792774, z: 80.735}
+  m_LocalPosition: {x: -111.29098, y: 5.792774, z: 80.735}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3342,7 +3342,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8296719615705692860, guid: 9d540334db546224db3662fbd44f14e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -111.29245
+      value: -111.29098
       objectReference: {fileID: 0}
     - target: {fileID: 8296719615705692860, guid: 9d540334db546224db3662fbd44f14e5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8775,7 +8775,6 @@ GameObject:
   - component: {fileID: 3194716101275560719}
   - component: {fileID: 3194716101275560712}
   - component: {fileID: 3194716101275560713}
-  - component: {fileID: 3194716101275560718}
   - component: {fileID: 3194716101275560717}
   m_Layer: 0
   m_Name: EnemyBoss
@@ -8798,28 +8797,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!114 &3194716101275560718
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3194716101275560715}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11d69cbbc6779ee4bb9ad182c8c989e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movingSpeed: 2
-  patrolPoints:
-  - {fileID: 684214974}
-  - {fileID: 1896157013}
-  waitTime: 1
-  rotationSpeed: 10
-  visionDistance: 10
-  projectile: {fileID: 762037882816976708, guid: 21136287801f49f46aada2d238640102, type: 3}
-  timeBetweenShots: 1
-  playerHit: {x: 0, y: 0, z: 0}
 --- !u!4 &3194716101275560719
 Transform:
   m_ObjectHideFlags: 0
