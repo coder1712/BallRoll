@@ -44,8 +44,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.9119552, b: 0, a: 1}
-  m_Intensity: 2
-  m_Range: 16.07
+  m_Intensity: 3
+  m_Range: 25
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -83,7 +83,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 1
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -225,11 +225,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bad8901d9897344499f969b889cb495, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 70
+  playerSpeed: 100
   jumpForce: 10
   health: {fileID: 8856393898853802016}
   countText: {fileID: 0}
   winTextObject: {fileID: 0}
+  key: 0
 --- !u!114 &4918635407253153857
 MonoBehaviour:
   m_ObjectHideFlags: 0

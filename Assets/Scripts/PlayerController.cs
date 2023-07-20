@@ -9,11 +9,20 @@ public class PlayerController : MonoBehaviour
     private float playerSpeed = 15.0f;
     [SerializeField]
     private float jumpForce = 5.0f;
+    [SerializeField]
+    private GameObject bulletPrefab;
+    [SerializeField]
+    private Transform barrelTransform;
+    [SerializeField]
+    private Transform bulletParent;
+    [SerializeField]
+    private float bulletMissDistance = 25f;
 
     private Rigidbody rb;
     private SphereCollider sphereCollider;
     private PlayerInput playerInput;
     private InputAction jumpAction;
+    private InputAction shootAction;
 
     private Transform cameraTransform;
 
@@ -28,13 +37,13 @@ public class PlayerController : MonoBehaviour
     private int score;
     public int key;
 
-    void Start()
+    void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         sphereCollider = GetComponent<SphereCollider>();
         jumpAction = playerInput.actions["Jump"];
-
+        shootAction = playerInput.actions["Shoot"];
         score = 0;
         key = 0;
         SetCountText();
@@ -43,6 +52,32 @@ public class PlayerController : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
+    }
+
+    private void OnEnable()
+    {
+        shootAction.performed += _ => ShootGun();
+    }
+    private void OnDisable()
+    {
+        shootAction.performed -= _ => ShootGun();
+    }
+
+    private void ShootGun()
+    {
+        RaycastHit hit;
+        GameObject bullet = GameObject.Instantiate(bulletPrefab, barrelTransform.position, Quaternion.identity, bulletParent);
+        playerBulletController bulletController = bullet.GetComponent<playerBulletController>();
+        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity))
+        {
+            bulletController.target = hit.point;
+            bulletController.hit = true;
+        }
+        else
+        {
+            bulletController.target = cameraTransform.position + cameraTransform.forward * bulletMissDistance;
+            bulletController.hit = true;
+        }
     }
 
     private void OnMove(InputValue movementValue)
