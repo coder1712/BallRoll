@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 762037882816976705}
   - component: {fileID: 762037882816976710}
   - component: {fileID: 477087251969308418}
+  - component: {fileID: -576644615121039896}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: EnemyFire
@@ -63,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a190b4396c0caca4a80151b1ecccc54b, type: 2}
+  - {fileID: 2100000, guid: 534b56792e349e4449879533569e3480, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,3 +112,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDecal: {fileID: 711390561007665991, guid: 067861890ca0f414594795a9ef672f0d, type: 3}
+--- !u!54 &-576644615121039896
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 762037882816976708}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

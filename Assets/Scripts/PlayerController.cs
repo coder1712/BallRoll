@@ -6,9 +6,11 @@ using TMPro;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    private float playerSpeed = 15.0f;
+    private float playerSpeed = 100.0f;
     [SerializeField]
     private float jumpForce = 5.0f;
+    [SerializeField]
+    private float rotationSpeed = 5f;
     [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
@@ -21,6 +23,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
     private SphereCollider sphereCollider;
     private PlayerInput playerInput;
+    private InputAction moveAction;
     private InputAction jumpAction;
     private InputAction shootAction;
 
@@ -42,6 +45,7 @@ public class PlayerController : MonoBehaviour
         playerInput = GetComponent<PlayerInput>();
         rb = GetComponent<Rigidbody>();
         sphereCollider = GetComponent<SphereCollider>();
+        moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
         shootAction = playerInput.actions["Shoot"];
         score = 0;
@@ -51,7 +55,7 @@ public class PlayerController : MonoBehaviour
         cameraTransform = Camera.main.transform;
 
         Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnEnable()
@@ -76,17 +80,10 @@ public class PlayerController : MonoBehaviour
         else
         {
             bulletController.target = cameraTransform.position + cameraTransform.forward * bulletMissDistance;
-            bulletController.hit = true;
+            bulletController.hit = false;
         }
     }
 
-    private void OnMove(InputValue movementValue)
-    {
-        Vector2 movementVector = movementValue.Get<Vector2>();
-
-        movementX = movementVector.x;
-        movementY = movementVector.y;
-    }
     private void Update()
     {
         isGrounded();
@@ -94,14 +91,23 @@ public class PlayerController : MonoBehaviour
         {
             Jump();
         }
+
+    }
+    void FixedUpdate()
+    {
+        Vector2 input = moveAction.ReadValue<Vector2>();
+        Vector3 move = new Vector3(input.x, 0, input.y);
+        move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
+        rb.AddForce(move * playerSpeed);
+        rb.freezeRotation = true;
+        Rotation();
+
     }
 
-    private void FixedUpdate()
+    void Rotation()
     {
-        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
-        movement = movement.x * cameraTransform.right.normalized + movement.z * cameraTransform.forward.normalized;
-        movement.y = 0.0f;
-        rb.AddForce(movement * playerSpeed);
+        Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x, cameraTransform.eulerAngles.y, 0);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 
     private void Jump()
