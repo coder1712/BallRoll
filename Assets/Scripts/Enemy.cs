@@ -5,7 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     // movement variables
-    public float movingSpeed;
+    [SerializeField]
+    private float movingSpeed;
     public Transform[] patrolPoints;
     public float waitTime;
     int currentPointIndex;
@@ -16,9 +17,12 @@ public class Enemy : MonoBehaviour
     public float timeBetweenShots;
     private float nextShotTime = 1f;
     public Vector3 playerHit;
-
     public float shootDistance;
+
     public Transform player;
+    [SerializeField]
+    private int health = 3;
+
 
     void Start()
     {
@@ -27,12 +31,6 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        // Enemy vision
-        // transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
-        // Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * visionDistance, Color.yellow);
-        // if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out RaycastHit hitInfo, visionDistance))
-        // {
-        //     if (hitInfo.collider.tag == "Player")
         if (Vector3.Distance(transform.position, player.position) < shootDistance)
         {
             // Enemy shooting
@@ -42,13 +40,11 @@ public class Enemy : MonoBehaviour
                 nextShotTime = Time.time + timeBetweenShots;
             }
         }
-        // }
 
         // Enemy Movement
         if (transform.position != patrolPoints[currentPointIndex].position)
         {
             transform.position = Vector3.MoveTowards(transform.position, patrolPoints[currentPointIndex].position, movingSpeed * Time.deltaTime);
-            // transform.LookAt(patrolPoints[currentPointIndex].transform);
         }
         else
         {
@@ -57,6 +53,19 @@ public class Enemy : MonoBehaviour
                 once = true;
                 StartCoroutine(Wait());
             }
+        }
+
+    }
+    //Enemy Health
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("playerFire"))
+        {
+            health -= 1;
+        }
+        if (health <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 

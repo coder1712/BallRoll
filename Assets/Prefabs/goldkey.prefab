@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9155164556269229695}
   - component: {fileID: 7551472289553713913}
   - component: {fileID: 8263613678024467956}
+  - component: {fileID: 980403221}
   m_Layer: 0
   m_Name: goldkey
   m_TagString: key
@@ -93,7 +94,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7209508568020760490}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.30953434
   m_Height: 1.440755
@@ -115,3 +116,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &980403221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7209508568020760490}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43cedf97221e3a94aa8361bd5c56b527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

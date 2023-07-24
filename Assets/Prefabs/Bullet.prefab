@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -576644615121039896}
   m_Layer: 0
   m_Name: Bullet
-  m_TagString: EnemyFire
+  m_TagString: playerFire
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletDecal: {fileID: 711390561007665991, guid: 067861890ca0f414594795a9ef672f0d, type: 3}
+  speed: 50
 --- !u!54 &-576644615121039896
 Rigidbody:
   m_ObjectHideFlags: 0

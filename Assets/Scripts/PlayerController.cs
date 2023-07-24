@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float jumpForce = 5.0f;
     [SerializeField]
-    private float rotationSpeed = 5f;
+    private float rotationSpeed = 10f;
     [SerializeField]
     private GameObject bulletPrefab;
     [SerializeField]
@@ -30,12 +30,11 @@ public class PlayerController : MonoBehaviour
     private Transform cameraTransform;
 
     private bool grounded = false;
-    private float movementX;
-    private float movementY;
 
     public Health health;
     public TextMeshProUGUI countText;
     public GameObject winTextObject;
+    public TextMeshProUGUI keyCount;
 
     private int score;
     public int key;
@@ -141,6 +140,7 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             key++;
+            SetCountText();
         }
     }
 
@@ -158,6 +158,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText()
     {
         countText.text = " " + score.ToString();
+        keyCount.text = " " + key.ToString();
     }
 
 }

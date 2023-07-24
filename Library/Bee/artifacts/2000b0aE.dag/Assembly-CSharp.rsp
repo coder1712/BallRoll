@@ -345,6 +345,7 @@
 "Assets/Scripts/PauseMenu.cs"
 "Assets/Scripts/playerBulletController.cs"
 "Assets/Scripts/PlayerController.cs"
+"Assets/Scripts/playerRotator.cs"
 "Assets/Scripts/ResumeScene.cs"
 "Assets/Scripts/Rotator.cs"
 "Assets/Scripts/SceneTransition.cs"

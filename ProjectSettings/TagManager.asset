@@ -11,6 +11,7 @@ TagManager:
   - GoldBar
   - EnemyFire
   - key
+  - playerFire
   layers:
   - Default
   - TransparentFX
