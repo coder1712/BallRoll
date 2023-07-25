@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyAttackProjectile : MonoBehaviour
 {
     public float speed;
-    public float lifetime = 4f;
+    // public float lifetime = 4f;
     public Transform player;
     public Vector3 target;
 
@@ -13,7 +13,7 @@ public class EnemyAttackProjectile : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         target = new Vector3(player.position.x, player.position.y, player.position.z);
-        Destroy(gameObject, lifetime);
+        // Destroy(gameObject, lifetime);
     }
 
     private void Update()

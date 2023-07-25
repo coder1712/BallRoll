@@ -102,10 +102,10 @@ MonoBehaviour:
   waitTime: 0.5
   projectile: {fileID: 762037882816976708, guid: 21136287801f49f46aada2d238640102, type: 3}
   timeBetweenShots: 1
-  nextShotTime: 1
   playerHit: {x: 0, y: 0, z: 0}
-  shootDistance: 8
+  shootDistance: 10
   player: {fileID: 0}
+  health: 3
 --- !u!135 &6368570188683610122
 SphereCollider:
   m_ObjectHideFlags: 0

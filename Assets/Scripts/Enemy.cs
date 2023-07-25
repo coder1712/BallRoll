@@ -20,8 +20,8 @@ public class Enemy : MonoBehaviour
     public float shootDistance;
 
     public Transform player;
-    [SerializeField]
-    private int health = 3;
+    // [SerializeField]
+    // private int health = 3;
 
 
     void Start()
@@ -57,17 +57,17 @@ public class Enemy : MonoBehaviour
 
     }
     //Enemy Health
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("playerFire"))
-        {
-            health -= 1;
-        }
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    //     if (collision.gameObject.CompareTag("playerFire"))
+    //     {
+    //         health -= 1;
+    //     }
+    //     if (health <= 0)
+    //     {
+    //         Destroy(gameObject);
+    //     }
+    // }
 
     IEnumerator Wait()
     {

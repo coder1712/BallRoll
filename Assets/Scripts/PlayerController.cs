@@ -9,23 +9,23 @@ public class PlayerController : MonoBehaviour
     private float playerSpeed = 100.0f;
     [SerializeField]
     private float jumpForce = 5.0f;
-    [SerializeField]
-    private float rotationSpeed = 10f;
-    [SerializeField]
-    private GameObject bulletPrefab;
-    [SerializeField]
-    private Transform barrelTransform;
-    [SerializeField]
-    private Transform bulletParent;
-    [SerializeField]
-    private float bulletMissDistance = 25f;
+    // [SerializeField]
+    // private float rotationSpeed = 10f;
+    // [SerializeField]
+    // private GameObject bulletPrefab;
+    // [SerializeField]
+    // private Transform barrelTransform;
+    // [SerializeField]
+    // private Transform bulletParent;
+    // [SerializeField]
+    // private float bulletMissDistance = 25f;
 
     private Rigidbody rb;
     private SphereCollider sphereCollider;
     private PlayerInput playerInput;
     private InputAction moveAction;
     private InputAction jumpAction;
-    private InputAction shootAction;
+    // private InputAction shootAction;
 
     private Transform cameraTransform;
 
@@ -46,7 +46,7 @@ public class PlayerController : MonoBehaviour
         sphereCollider = GetComponent<SphereCollider>();
         moveAction = playerInput.actions["Move"];
         jumpAction = playerInput.actions["Jump"];
-        shootAction = playerInput.actions["Shoot"];
+        // shootAction = playerInput.actions["Shoot"];
         score = 0;
         key = 0;
         SetCountText();
@@ -57,57 +57,55 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    private void OnEnable()
-    {
-        shootAction.performed += _ => ShootGun();
-    }
-    private void OnDisable()
-    {
-        shootAction.performed -= _ => ShootGun();
-    }
+    // private void OnEnable()
+    // {
+    //     shootAction.performed += _ => ShootGun();
+    // }
+    // private void OnDisable()
+    // {
+    //     shootAction.performed -= _ => ShootGun();
+    // }
 
-    private void ShootGun()
-    {
-        RaycastHit hit;
-        GameObject bullet = GameObject.Instantiate(bulletPrefab, barrelTransform.position, Quaternion.identity, bulletParent);
-        playerBulletController bulletController = bullet.GetComponent<playerBulletController>();
-        if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity))
-        {
-            bulletController.target = hit.point;
-            bulletController.hit = true;
-        }
-        else
-        {
-            bulletController.target = cameraTransform.position + cameraTransform.forward * bulletMissDistance;
-            bulletController.hit = false;
-        }
-    }
+    // private void ShootGun()
+    // {
+    //     RaycastHit hit;
+    //     GameObject bullet = GameObject.Instantiate(bulletPrefab, barrelTransform.position, Quaternion.identity, bulletParent);
+    //     playerBulletController bulletController = bullet.GetComponent<playerBulletController>();
+    //     if (Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hit, Mathf.Infinity))
+    //     {
+    //         bulletController.target = hit.point;
+    //         bulletController.hit = true;
+    //     }
+    //     else
+    //     {
+    //         bulletController.target = cameraTransform.position + cameraTransform.forward * bulletMissDistance;
+    //         bulletController.hit = false;
+    //     }
+    // }
 
-    private void Update()
+    private void LateUpdate()
     {
         isGrounded();
         if (jumpAction.triggered && grounded)
         {
             Jump();
         }
-
     }
     void FixedUpdate()
     {
         Vector2 input = moveAction.ReadValue<Vector2>();
         Vector3 move = new Vector3(input.x, 0, input.y);
         move = move.x * cameraTransform.right.normalized + move.z * cameraTransform.forward.normalized;
+        move.y = 0.0f;
         rb.AddForce(move * playerSpeed);
-        rb.freezeRotation = true;
-        Rotation();
-
+        // Rotation();
     }
 
-    void Rotation()
-    {
-        Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x, cameraTransform.eulerAngles.y, 0);
-        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-    }
+    // void Rotation()
+    // {
+    //     Quaternion targetRotation = Quaternion.Euler(cameraTransform.eulerAngles.x, cameraTransform.eulerAngles.y, 0);
+    //     transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+    // }
 
     private void Jump()
     {
