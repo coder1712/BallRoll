@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.6901961, g: 0.40784314, b: 0.3764706, a: 1}
+  m_AmbientSkyColor: {r: 0.9245283, g: 0.8727198, b: 0.8669633, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -1940,7 +1940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8296719615705692860, guid: 9d540334db546224db3662fbd44f14e5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -62.848278
+      value: -64.36217
       objectReference: {fileID: 0}
     - target: {fileID: 8296719615705692860, guid: 9d540334db546224db3662fbd44f14e5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2982,8 +2982,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445253383}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 23, y: 8, z: 35.7}
-  m_LocalScale: {x: 30, y: 15, z: 2}
+  m_LocalPosition: {x: 23, y: 8, z: 35}
+  m_LocalScale: {x: 28, y: 15, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1857244061}
@@ -5652,7 +5652,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8859836155789273877}
   m_LocalRotation: {x: 0.32326594, y: 0, z: 0, w: 0.94630814}
-  m_LocalPosition: {x: -62.848278, y: 6.7927737, z: -39.964993}
+  m_LocalPosition: {x: -64.36217, y: 6.7927737, z: -39.964993}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

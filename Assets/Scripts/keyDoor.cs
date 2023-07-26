@@ -16,7 +16,7 @@ public class keyDoor : MonoBehaviour
     }
     void Update()
     {
-        if (player.GetComponent<PlayerController>().key == keyCount && close <= 35)
+        if (player.GetComponent<PlayerController>().key == keyCount && close <= 30)
         {
             if (Vector3.Distance(rDoor.transform.position, player.transform.position) < 15f)
             {
