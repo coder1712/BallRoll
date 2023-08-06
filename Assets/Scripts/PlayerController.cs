@@ -39,6 +39,8 @@ public class PlayerController : MonoBehaviour
     private int score;
     public int key;
 
+    public AudioSource PowerUPAudio;
+
     void Awake()
     {
         playerInput = GetComponent<PlayerInput>();
@@ -130,6 +132,7 @@ public class PlayerController : MonoBehaviour
         // PowerUps and collectibles
         if (other.gameObject.CompareTag("GoldBar"))
         {
+            PowerUPAudio.Play();
             other.gameObject.SetActive(false);
             score = score + 1;
             SetCountText();

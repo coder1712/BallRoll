@@ -55,12 +55,9 @@ UnityEngine.Animator::get_hasRootMotion
 UnityEngine.Animator::get_isHuman
 UnityEngine.Animator::StringToHash
 UnityEngine.Animator::get_layerCount
-UnityEngine.Animator::GetFloatString
 UnityEngine.Animator::GetAnimatorClipInfoInternal
 UnityEngine.Animator::GetAnimatorStateInfo
 UnityEngine.Animator::ResetTriggerString
-UnityEngine.Animator::SetBoolString
-UnityEngine.Animator::SetFloatString
 UnityEngine.Animator::SetTriggerString
 UnityEngine.Animator::get_avatar
 UnityEngine.Animator::get_runtimeAnimatorController
@@ -85,6 +82,7 @@ UnityEngine.Audio.AudioPlayableOutput::InternalSetTarget
 UnityEngine.AudioClip::get_frequency
 UnityEngine.AudioClip::get_samples
 UnityEngine.AudioClip::get_length
+UnityEngine.AudioSource::PlayHelper
 UnityEngine.Avatar::get_humanDescription_Injected
 UnityEngine.AvatarMask::GetHumanoidBodyPartActive
 UnityEngine.AvatarMask::get_transformCount
@@ -100,8 +98,6 @@ UnityEngine.Camera::GetAllCamerasCount
 UnityEngine.Camera::GetAllCamerasImpl
 UnityEngine.Camera::get_cullingMask
 UnityEngine.Camera::get_eventMask
-UnityEngine.Camera::get_pixelHeight
-UnityEngine.Camera::get_pixelWidth
 UnityEngine.Camera::get_targetDisplay
 UnityEngine.Camera::get_aspect
 UnityEngine.Camera::get_depth
@@ -279,13 +275,12 @@ UnityEngine.GameObject::SendMessage
 UnityEngine.GameObject::SetActive
 UnityEngine.GameObject::get_scene_Injected
 UnityEngine.GameObject::set_layer
-UnityEngine.GameObject::set_tag
 UnityEngine.GameObject::GetComponent
 UnityEngine.GameObject::GetComponentInChildren
 UnityEngine.GameObject::GetComponentInParent
 UnityEngine.GameObject::Internal_AddComponentWithType
 UnityEngine.GameObject::TryGetComponentInternal
-UnityEngine.GameObject::Find
+UnityEngine.GameObject::FindGameObjectWithTag
 UnityEngine.GameObject::get_transform
 UnityEngine.GL::Begin
 UnityEngine.GL::End
@@ -306,12 +301,8 @@ UnityEngine.Gradient::Cleanup
 UnityEngine.Graphics::Internal_GetMaxDrawMeshInstanceCount
 UnityEngine.Graphics::Internal_SetNullRT
 UnityEngine.Graphics::Internal_SetRTSimple_Injected
-UnityEngine.GUI::HasMouseControl
 UnityEngine.GUI::get_changed
 UnityEngine.GUI::get_enabled
-UnityEngine.GUI::GrabMouseControl
-UnityEngine.GUI::Internal_DoWindow_Injected
-UnityEngine.GUI::ReleaseMouseControl
 UnityEngine.GUI::get_backgroundColor_Injected
 UnityEngine.GUI::get_color_Injected
 UnityEngine.GUI::get_contentColor_Injected
@@ -332,7 +323,6 @@ UnityEngine.GUILayoutUtility::Internal_MoveWindow_Injected
 UnityEngine.GUIStyle::IsTooltipActive
 UnityEngine.GUIStyle::get_stretchHeight
 UnityEngine.GUIStyle::get_stretchWidth
-UnityEngine.GUIStyle::get_wordWrap
 UnityEngine.GUIStyle::Internal_GetCursorStringIndex_Injected
 UnityEngine.GUIStyle::GetRectOffsetPtr
 UnityEngine.GUIStyle::GetStyleStatePtr
@@ -344,8 +334,6 @@ UnityEngine.GUIStyle::get_fixedHeight
 UnityEngine.GUIStyle::get_fixedWidth
 UnityEngine.GUIStyle::Internal_GetSelectedRenderedText_Injected
 UnityEngine.GUIStyle::get_rawName
-UnityEngine.GUIStyle::Internal_CalcMinMaxWidth_Injected
-UnityEngine.GUIStyle::Internal_CalcSizeWithConstraints_Injected
 UnityEngine.GUIStyle::Internal_CalcSize_Injected
 UnityEngine.GUIStyle::Internal_Destroy
 UnityEngine.GUIStyle::Internal_Draw2_Injected
@@ -363,7 +351,6 @@ UnityEngine.GUIStyle::set_richText
 UnityEngine.GUIStyle::set_stretchHeight
 UnityEngine.GUIStyle::set_wordWrap
 UnityEngine.GUIStyle::get_font
-UnityEngine.GUIStyle::get_imagePosition
 UnityEngine.GUIStyleState::Init
 UnityEngine.GUIStyleState::Cleanup
 UnityEngine.GUIStyleState::set_textColor_Injected
@@ -393,10 +380,6 @@ UnityEngine.GUIUtility::set_imeCompositionMode
 UnityEngine.GUIUtility::set_systemCopyBuffer
 UnityEngine.Input::CheckDisabled
 UnityEngine.Input::GetButtonDown
-UnityEngine.Input::GetKeyDownInt
-UnityEngine.Input::GetKeyInt
-UnityEngine.Input::GetKeyString
-UnityEngine.Input::GetKeyUpInt
 UnityEngine.Input::GetMouseButton
 UnityEngine.Input::GetMouseButtonDown
 UnityEngine.Input::GetMouseButtonUp
@@ -513,7 +496,6 @@ UnityEngine.Object::get_hideFlags
 UnityEngine.Object::FindObjectFromInstanceID
 UnityEngine.Object::Internal_CloneSingle
 UnityEngine.Object::Internal_CloneSingleWithParent
-UnityEngine.Object::Internal_InstantiateSingleWithParent_Injected
 UnityEngine.Object::Internal_InstantiateSingle_Injected
 UnityEngine.ObjectGUIState::Internal_Create
 UnityEngine.ObjectGUIState::Internal_Destroy
@@ -626,7 +608,6 @@ UnityEngine.Quaternion::FromToRotation_Injected
 UnityEngine.Quaternion::Internal_FromEulerRad_Injected
 UnityEngine.Quaternion::Internal_ToEulerRad_Injected
 UnityEngine.Quaternion::Inverse_Injected
-UnityEngine.Quaternion::Lerp_Injected
 UnityEngine.Quaternion::LookRotation_Injected
 UnityEngine.Quaternion::SlerpUnclamped_Injected
 UnityEngine.Quaternion::Slerp_Injected
@@ -722,7 +703,6 @@ UnityEngine.ScriptingRuntime::GetAllUserAssemblies
 UnityEngine.Shader::PropertyToID
 UnityEngine.Shader::TagToID
 UnityEngine.SortingLayer::GetLayerValueFromID
-UnityEngine.SphereCollider::get_radius
 UnityEngine.SphereCollider::set_radius
 UnityEngine.Sprite::GetPacked
 UnityEngine.Sprite::GetPackingMode
@@ -827,7 +807,6 @@ UnityEngine.TouchScreenKeyboard::set_text
 UnityEngine.TouchScreenKeyboard::get_status
 UnityEngine.Transform::IsChildOf
 UnityEngine.Transform::get_childCount
-UnityEngine.Transform::Internal_LookAt_Injected
 UnityEngine.Transform::InverseTransformPoint_Injected
 UnityEngine.Transform::SetAsFirstSibling
 UnityEngine.Transform::SetParent
