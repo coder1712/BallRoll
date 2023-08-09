@@ -7,10 +7,16 @@ public class StartMenuController : MonoBehaviour
         SceneManager.LoadScene("Lvl_1");
     }
 
-    public void Restart()
+    public void RestartLvl1()
     {
         SceneManager.LoadScene("Lvl_1");
     }
+
+    public void Restart()
+    {
+        SceneManager.SetActiveScene(SceneManager.GetActiveScene());
+    }
+
 
     public void QuitGame()
     {

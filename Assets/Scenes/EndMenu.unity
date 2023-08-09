@@ -828,7 +828,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5119702643625715638}
         m_TargetAssemblyTypeName: StartMenuController, Assembly-CSharp
-        m_MethodName: Restart
+        m_MethodName: RestartLvl1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

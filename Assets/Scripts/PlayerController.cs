@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 [RequireComponent(typeof(PlayerInput))]
 public class PlayerController : MonoBehaviour
 {
@@ -151,7 +151,11 @@ public class PlayerController : MonoBehaviour
         {
             //Player Damage
             health.health -= 1;
-            score = 0;
+            if (health.health == 0)
+            {
+                SceneManager.LoadScene("PlayerDiedScene");
+                Cursor.visible = true;
+            }
             SetCountText();
         }
     }

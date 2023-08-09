@@ -11,7 +11,10 @@ public class PauseMenu : MonoBehaviour
         if (Keyboard.current.pKey.wasPressedThisFrame)
         {
             if (isPaused)
+            {
+                Cursor.visible = true;
                 Resume();
+            }
             else
                 Pause();
         }
