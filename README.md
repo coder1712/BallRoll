@@ -1,13 +1,18 @@
 # BallRoll
-3D game inspired from Red Ball 4
+3D haunted casual game inspired from Red Ball 4 and mario forever
 # Game Play
-- Collect gold bars
-- Kill enemies by jumping on their head
+- Collect gold bars and door keys
+- Ditch enemies by jumping or moving fast by them
 - Find exit door
 # Future Targets
 - Improve player and enemy attack interaction
-- Add key in scenes to pass levels
 - Define new game objectives
-- Addd sounds, ligths and animation
+- Improve sounds, ligths and animation
+- Clear bugs
 
 # [Itch.io](https://anshulrana.itch.io/ball-roll)
+# Credits
+- Materials: [AI Materials](https://poly.cam/material-generator)
+- Unity Packages: Cinemachine, New Input System
+- Sound/Music: [SoundImage](https://soundimage.org)
+- sprites: [OpenGameArt](https://opengameart.org)
